@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Set page configuration
-st.set_page_config(page_title="Gold Price Analysis", layout="wide")
+df = pd.read_csv("gold_price_forecasting_dataset.csv")
 
 # Title
 st.title("Gold Price Forecasting Dataset Analysis")
@@ -108,5 +108,6 @@ numeric_df = filtered_df.select_dtypes(include=[np.number])
 sns.heatmap(numeric_df.corr(), annot=False, cmap='coolwarm', ax=ax_corr)
 ax_corr.set_title("Feature Correlation Matrix")
 st.pyplot(fig_corr)
+
 
 
